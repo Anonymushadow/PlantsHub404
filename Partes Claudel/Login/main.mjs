@@ -1,13 +1,7 @@
-
-
+import { login } from "./modulos/login.mjs";
 
 const startApplication = ()=> {
-    startLoginForm();
-    startRegisterForm();
-
-    productosOption.addEventListener("click", ()=> {
-        searchBarContainer.classList.add("show__search__bar");
-     })
+    login("login");
 }
 
 window.addEventListener("load", ()=> {
