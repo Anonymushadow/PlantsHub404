@@ -1,48 +1,75 @@
 import {
-  obtenerElementosParaLogin,
-  obtenerElementosParaRegistro,
+    obtenerElementosParaLogin,
+    obtenerElementosParaRegistro,
 } from "./config.mjs";
 import { MESSAGE_TYPES } from "./MESSAGE_TYPES.mjs";
 import { verificarTiposDeDatos } from "./VerificarDatos.mjs";
+import { leerArchivo } from "./ObtenerUsuarios.mjs";
 
-let datos;
+let datosDOM;
 
 export const login = (tipo) => {
-  datos = tipo === "login" ? obtenerElementosParaLogin() : obtenerElementosParaRegistro();
+    datosDOM =
+        tipo === "login" ?
+        obtenerElementosParaLogin() :
+        obtenerElementosParaRegistro();
 
-  if (tipo === "login") {
-    datos.formulario.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!verificarTiposDeDatos(datos.loginEmailInput.value, MESSAGE_TYPES.IS_MAIL)) {
-        alert("Correo invalido");
-        //Alertar("Revise su contraseña", "error");
-        return;
-      }
-
-      if(!datos.loginPasswordInput.value){
-        alert("Contraseña invalida");
-        return;
-      }
-    });
-  }else{
-    datos.formulario.addEventListener("submit", (e) => {
+    datosDOM.formulario.addEventListener("submit", async(e) => {
         e.preventDefault();
-        if (!verificarTiposDeDatos(datos.loginEmailInput.value, MESSAGE_TYPES.IS_MAIL)) {
-          alert("Revise su contraseña");
-          //Alertar("Revise su contraseña", "error");
-          return;
+
+        if (!verificarTiposDeDatos(
+                datosDOM.loginEmailInput.value,
+                MESSAGE_TYPES.IS_MAIL
+            )) {
+            alert("Correo inválido");
+            return;
         }
 
-        if (!verificarTiposDeDatos(datos.loginDNIInput.value, MESSAGE_TYPES.IS_NUMBER) || datos.loginDNIInput == "") {
-            alert("Revise su DNI");
-            //Alertar("Revise su contraseña", "error");
+        if (!datosDOM.loginPasswordInput.value) {
+            alert("Contraseña inválida");
             return;
-          }
-  
-        if(!datos.loginPasswordInput.value){
-          alert("Ingrese una contraseña");
-          return;
         }
-      });
-  }
+
+        if (tipo === "login") {
+            try {
+                const data = await leerArchivo("./data/usuarios.txt", "usuarios");
+
+                const usuarioEncontrado = data.find(
+                    (usuario) => usuario.mail.trim().toLowerCase() === datosDOM.loginEmailInput.value.trim().toLowerCase()
+                );
+
+
+
+                if (usuarioEncontrado) {
+                    const claveCorrecta = usuarioEncontrado.clave.trim() === datosDOM.loginPasswordInput.value.trim();
+
+                    if (claveCorrecta) {
+                        alert("Logeado");
+                    } else {
+                        alert("Clave incorrecta");
+                    }
+                } else {
+                    alert("Usuario no encontrado");
+                }
+
+            } catch (error) {
+                console.error("Hubo un error al obtener los datos:", error.message);
+            }
+        } else {
+            if (!verificarTiposDeDatos(
+                    datosDOM.loginDNIInput.value,
+                    MESSAGE_TYPES.IS_NUMBER
+                ) ||
+                datosDOM.loginDNIInput === ""
+            ) {
+                alert("Revise su DNI");
+                return;
+            }
+
+            if (!datosDOM.loginPasswordInput.value) {
+                alert("Ingrese una contraseña");
+                return;
+            }
+        }
+    });
 };
