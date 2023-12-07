@@ -1,0 +1,27 @@
+.about__content {
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 35px;
+    background-image: url("../images/practica/campo__flores.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about__title {
+    color: var(--color__principal);
+    font-size: 28px;
+    text-align: center;
+    text-shadow: -2px 2px 2px var(--color__neutro__oscuro);
+}
+
+.about__p {
+    color: var(--color__neutro__oscuro);
+    font-size: 16px;
+    line-height: 2.5;
+    background: var(--color__terciario__transparente);
+    font-weight: 700;
+    margin: 61px 0;
+    box-shadow: -2px 3px 13px var(--color__principal);
+    padding: 0 10px;
+    border-radius: 10px;
+}

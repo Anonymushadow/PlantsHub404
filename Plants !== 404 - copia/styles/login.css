@@ -1,0 +1,105 @@
+.form__container {
+    width: 100%;
+    min-height: calc(100dvh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/practica/campo__flores.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login__form,
+.login__form__inputs__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+
+.login__form {
+    height: 350px;
+    width: 90vw;
+    max-width: 600px;
+    justify-content: space-evenly;
+    /*background: #fff5;*/
+}
+
+
+/*TITULO*/
+
+.login__form__title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+}
+
+
+/*INPUTS*/
+
+.login__form__inputs__container {
+    justify-content: space-around;
+    width: 100%;
+}
+
+.login__form__input {
+    border: none;
+    outline: none;
+    width: 80%;
+    max-width: 300px;
+    min-width: 213px;
+    padding: .6em;
+    border-radius: 32px;
+    background-color: rgba(255, 211, 216, 0.50);
+    color: var(--color__neutro__oscuro);
+    border-bottom: 2px solid var(--color__neutro__oscuro);
+}
+
+.login__form__input::placeholder {
+    color: var(--color__neutro__claro)
+}
+
+
+/*BOTTON DE ENVIO*/
+
+.login__form__button__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login__form__send__button {
+    background: var(--color__secundario);
+    border: none;
+    padding: 0.3em;
+    width: 13em;
+    border-radius: 30px;
+    color: var(--color__neutro__oscuro);
+    font-weight: 700;
+    border: 2px solid var(--color__neutro__oscuro);
+    cursor: pointer;
+}
+
+.login__form__send__button:hover {
+    filter: brightness(1.2);
+}
+
+.login__form__send__button:active {
+    background-color: var(--color__principal);
+}
+
+.login__register__link {
+    color: var(--color__neutro__claro);
+    cursor: pointer;
+    text-shadow: -2px 2px 2px black;
+}
+
+.login__register__link:hover {
+    color: var(--color__secundario);
+}
