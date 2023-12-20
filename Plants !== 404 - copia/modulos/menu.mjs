@@ -3,6 +3,10 @@ import { renderizar } from "./renderizar.mjs";
 import { loginComponent } from "../componentes/ingreso.mjs";
 import { login, userAllowed, cerrarSesion } from "./login.mjs";
 import { aboutComponent } from "../componentes/about.mjs";
+import { homeComponent } from "../componentes/Home.mjs";
+import { cargarFiltros } from "./productos.mjs";
+import { arrayPlantas } from "./crearPlanta.mjs";
+import { Buscar } from "./search.mjs";
 
 const eliminarSeleccion = (links) => {
     links.forEach(link => link.classList.remove("navbar__menu__option__active"));
@@ -11,12 +15,26 @@ const eliminarSeleccion = (links) => {
 export const Menu = () => {
     const datos = obtenerDatosNavbarDOM();
 
+    //IMG CLICK
+    datos.navImage.addEventListener("click", () => {
+        eliminarSeleccion(datos.opciones);
+        datos.homeOption.classList.add("navbar__menu__option__active");
+        datos.searchBarContainer.classList.remove("show__search__bar");
+        renderizar(contentContainer, homeComponent);
+    })
+
     //MENU BUTTON
     datos.menuButton.addEventListener("click", () => {
         datos.menu.classList.toggle("show__menu");
     });
 
     //HOME BUTTON
+    datos.homeOption.addEventListener("click", () => {
+        eliminarSeleccion(datos.opciones);
+        datos.homeOption.classList.add("navbar__menu__option__active");
+        datos.searchBarContainer.classList.remove("show__search__bar");
+        renderizar(contentContainer, homeComponent);
+    })
 
     //SOBRE NOSOTROS BUTTON
     datos.aboutOption.addEventListener("click", () => {
@@ -31,7 +49,12 @@ export const Menu = () => {
         eliminarSeleccion(datos.opciones);
         datos.productosOption.classList.add("navbar__menu__option__active");
         datos.searchBarContainer.classList.add("show__search__bar");
-        renderizar(contentContainer, `<h1>Products</h1>`);
+        cargarFiltros();
+        let searchBar = document.querySelector(".navbar__search__bar");
+        searchBar.addEventListener("input", () => {
+            let response = Buscar(searchBar, arrayPlantas);
+            cargarFiltros(response);
+        });
     })
 
     //CONTACTENOS BUTTON

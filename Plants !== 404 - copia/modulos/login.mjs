@@ -42,7 +42,7 @@ const loginVerification = async(datos) => {
 
         const usuario = usuarios.find((user) => user.mail === mail);
 
-        if (usuario && usuario.clave == `${password}\r`) {
+        if (usuario && usuario.clave == `${password}`) {
             userAllowed = usuario.usuario;
             alert(`Bienvendio ${userAllowed}`);
             renderizar(contentContainer, "<h2>Productos</h2>");

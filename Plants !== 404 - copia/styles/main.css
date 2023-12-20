@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
 }
 
 *::selection {
@@ -76,4 +77,9 @@ i {
 
 .content__container {
     min-height: calc(100dvh - 80px);
+}
+
+.disabled__button {
+    filter: grayscale(1);
+    pointer-events: none;
 }

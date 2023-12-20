@@ -38,6 +38,7 @@
     width: 30px;
     height: 30px;
     margin: 5px 17px;
+    cursor: pointer;
 }
 
 .footer__copy {
@@ -45,6 +46,11 @@
     margin-top: 32px;
     font-size: 14px;
     opacity: 0.7;
+}
+
+.footer__g404__link {
+    color: var(--color__neutro__claro);
+    text-shadow: -2px 1px 1px var(--color__neutro__oscuro);
 }
 
 @media screen and (max-width: 600px) {
