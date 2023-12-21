@@ -18,10 +18,12 @@ export const obtenerDatosNavbarDOM = () => {
     const configurationOption = document.querySelector(".navbar__menu__option__configuracion");
     const homeOption = document.querySelector(".navbar__menu__option__home");
     const aboutOption = document.querySelector(".navbar__menu__option__about");
+    const themeOption = document.querySelector(".switch");
     const contactOption = document.querySelector(".navbar__menu__option__contacto");
     const carritoButton = document.querySelector(".navbar__cart__button");
     const loginButton = document.querySelector(".navbar__login__button");
     const navImage = document.querySelector(".navbar__logo");
+    const color = document.querySelector(":root");
 
     return {
         menuButton,
@@ -30,13 +32,14 @@ export const obtenerDatosNavbarDOM = () => {
         menu,
         opciones,
         productosOption,
-        configurationOption,
+        themeOption,
         aboutOption,
         contactOption,
         carritoButton,
         loginButton,
         navImage,
-        homeOption
+        homeOption,
+        color
     }
 };
 
@@ -86,12 +89,14 @@ export const obtenerDatosInicioDOM = () => {
     const homePlantasChicas = document.querySelector(".");
     const homeOtros = document.querySelector(".");
     const aboutReadMore = document.querySelector(".home__about__read__more");
+    const categoryButtons = document.querySelectorAll(".categoria__card__button");
 
     return {
         homePlantasGrandes,
         homePlantasChicas,
         homeOtros,
-        aboutReadMore
+        aboutReadMore,
+        categoryButtons
     }
 };
 

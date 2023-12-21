@@ -2,10 +2,6 @@
     margin: 0 auto;
     padding: 20px;
     padding-top: 35px;
-    background-image: url("../images/practica/campo__flores.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .about__title {
@@ -25,4 +21,9 @@
     box-shadow: -2px 3px 13px var(--color__principal);
     padding: 0 10px;
     border-radius: 10px;
+}
+
+.about__title,
+.about__p {
+    transition: all .3s ease-in;
 }

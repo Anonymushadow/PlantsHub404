@@ -31,10 +31,9 @@ const cargarProductos = async(productos) => {
     let cards = productosComponent(productos, productContainer);
     contentContainer.appendChild(cards);
 
-    if (!variablesDOM) {
-        variables = obtenerDatosProductsDOM();
-        variablesDOM = true;
-    }
+    variables = obtenerDatosProductsDOM();
+    variablesDOM = true;
+
 
     const verDetallesButtons = document.querySelectorAll(".card__button__ver__detalles");
     const añadirCarritoButton = document.querySelectorAll(".card__button__agrergar__carrito");
@@ -106,7 +105,7 @@ const abrirModalInfoProducto = (id, clickCart) => {
                 if (nuevaCantidad <= producto[0].stock) {
                     const indiceProductoEnCarrito = carrito.findIndex(elemento => elemento.producto === producto[0].nombreVulgar);
                     carrito[indiceProductoEnCarrito].cantidad = nuevaCantidad;
-                    console.log(carrito);
+                    alert(`${producto[0].nombreVulgar} x${carrito[indiceProductoEnCarrito].cantidad} añadido al carrito`);
                 } else {
                     alert("La cantidad seleccionada supera el stock disponible");
                 }
@@ -119,7 +118,7 @@ const abrirModalInfoProducto = (id, clickCart) => {
                 }
 
                 carrito.push(datosParaCarrito);
-                console.log(carrito)
+                alert(`${datosParaCarrito.producto} x${datosParaCarrito.cantidad} añadido al carrito`);
             }
         }
     });
@@ -142,6 +141,10 @@ const limpiarSeleccion = (botones, selecction, type) => {
 //activar la funcionalidad de los botones de filtrro y orden
 const activarFiltros = async(variables, productos, contenedor) => {
     let productosActuales = productos;
+
+    variables.filterOptions.forEach(filterB => {
+        filterB.removeEventListener("click", null);
+    })
 
     //FILTRO TODOS
     variables.filterTodos.addEventListener("click", () => {

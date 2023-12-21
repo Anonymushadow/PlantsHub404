@@ -3,7 +3,7 @@
 .productos__container {
     min-height: 100vh;
     width: 100%;
-    background-color: var(--color__principal);
+    background-color: transparent;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -83,7 +83,7 @@
     border-radius: 15px;
     flex: 1;
     background-color: var(--color__neutro__claro);
-    transition: all .5s;
+    transition: all .3s ease-in;
 }
 
 .card:hover {
@@ -92,7 +92,7 @@
 }
 
 .card:hover>.card__image__container {
-    box-shadow: -5px 5px 11px var(--color__principal);
+    box-shadow: -5px 5px 11px var(--color__principal__sombra);
 }
 
 .card__image__container {
@@ -163,6 +163,10 @@
     padding: 10px;
     font-size: .9em;
     cursor: pointer;
+    transition: all .3s ease-in;
+    color: var(--color__neutro__oscuro);
+    border: none;
+    border: 2px solid var(--color__neutro__oscuro);
 }
 
 .card__button__ver__detalles {
@@ -204,7 +208,6 @@
     align-items: start;
     overflow: auto;
     padding: 20px 0;
-    transition: all .6s;
 }
 
 .modal__info__product__close__button {
@@ -222,6 +225,7 @@
     width: 90%;
     border-radius: 10px;
     margin-top: 88px;
+    transition: all .3s ease-in;
 }
 
 .modal__info__product__title__container {
@@ -272,7 +276,7 @@
 
 .modal__info__product__button__next {
     right: 10px;
-    background-color: var(--color__principal);
+    background-color: var(--color__secundario);
 }
 
 .modal__info__product__button:hover {
@@ -361,7 +365,8 @@
     height: 100%;
     text-align: center;
     border: none;
-    border: 1px solid black;
+    border: 1px solid var(--color__neutro__oscuro);
+    transition: all .3s ease-in;
 }
 
 .modal__info__product__add__to__cart {
@@ -381,6 +386,7 @@
     background-color: var(--color__principal);
     font-size: 1em;
     cursor: pointer;
+    color: var(--color__neutro__oscuro);
 }
 
 .show__modal {

@@ -1,0 +1,23 @@
+Login: 
+    User 1: claudelnahuel22@gmail.com
+    Clave: aabcy2
+    
+    User 2; tomas@gmail.com
+    Clave: 0093
+
+    .tiene verificacion de datos para evitar que se introduzcan datos erroneos incluse si
+    acceden a la consola cambiandole el tipo al input y eliminando el required
+
+Registro: esta inhabilitado por el momento
+
+Asistente de voz: se activa al presionar el logo de la pagina, actualmente esta en proceso de adaptarlo
+debido a que realmente no le vemos uso, solo fue añadido por hacer pruebas de como quedaba en este proyecto
+
+Productos: 
+    .para realizar una compra debera logearse previamente
+    .cada producto tiene un stock el cual no puede superarse al momento de añadir al carrito, este sera 
+    verificado, tanto al añadir desde la info del producto como cuando se añade mediante la tarjeta de producto
+
+
+Adaptacion: adaptado a dispositivos mobiles y de escritorio
+

@@ -13,6 +13,7 @@
 
 :root {
     --color__principal: #5DBE9B;
+    --color__principal__sombra: #5DBE9B;
     --color__secundario: #8EDC9D;
     --color__terciario: #E5E5E5;
     --color__cuarto: #be5d80;
@@ -77,9 +78,19 @@ i {
 
 .content__container {
     min-height: calc(100dvh - 80px);
+    background-image: url(../images/practica/campo__flores.png);
+    background-color: bisque;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .disabled__button {
     filter: grayscale(1);
     pointer-events: none;
+}
+
+.background__dark {
+    background-image: url(../images/practica/campo__flores__dark.png);
 }

@@ -3,6 +3,7 @@
     padding: 2em;
     border-top: 2px solid var(--color__neutro__oscuro);
     color: var(--color__neutro__claro);
+    transition: all .3s ease-in;
 }
 
 .footer__content {

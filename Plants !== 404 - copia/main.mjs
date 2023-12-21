@@ -8,8 +8,8 @@ import { renderizar } from "./modulos/renderizar.mjs";
 const startApplication = () => {
     crearVariablesIniciales();
     //Header();
-    Menu();
     renderizar(contentContainer, homeComponent);
+    Menu();
     //Footer();
 }
 

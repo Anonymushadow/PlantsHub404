@@ -4,11 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../images/practica/campo__flores.png);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: transparent;
 }
 
 .login__form,
@@ -36,6 +32,7 @@
     display: flex;
     align-items: center;
     font-size: 2em;
+    color: var(--color__neutro__oscuro);
 }
 
 
@@ -97,9 +94,17 @@
 .login__register__link {
     color: var(--color__neutro__claro);
     cursor: pointer;
-    text-shadow: -2px 2px 2px black;
+    text-shadow: -2px 2px 2px var(--color__principal);
 }
 
 .login__register__link:hover {
     color: var(--color__secundario);
+}
+
+.login__form__title,
+.login__form__input,
+.login__form__input::placeholder,
+.login__form__send__button,
+.login__register__link {
+    transition: all .3s ease-in;
 }

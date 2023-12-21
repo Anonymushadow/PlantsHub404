@@ -7,6 +7,8 @@ import { homeComponent } from "../componentes/Home.mjs";
 import { cargarFiltros } from "./productos.mjs";
 import { arrayPlantas } from "./crearPlanta.mjs";
 import { Buscar } from "./search.mjs";
+import { startTheme } from "./theme.mjs";
+import { iniciarAsistente } from "./asistente.mjs";
 
 const eliminarSeleccion = (links) => {
     links.forEach(link => link.classList.remove("navbar__menu__option__active"));
@@ -15,12 +17,36 @@ const eliminarSeleccion = (links) => {
 export const Menu = () => {
     const datos = obtenerDatosNavbarDOM();
 
+
+    const categoryButtons = document.querySelectorAll(".categoria__card__button");
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            datos.productosOption.click();
+        });
+    });
+
+    const readModeHome = document.querySelector(".home__about__read__more");
+    readModeHome.addEventListener("click", () => {
+        datos.aboutOption.click();
+    });
+
     //IMG CLICK
     datos.navImage.addEventListener("click", () => {
         eliminarSeleccion(datos.opciones);
         datos.homeOption.classList.add("navbar__menu__option__active");
         datos.searchBarContainer.classList.remove("show__search__bar");
         renderizar(contentContainer, homeComponent);
+        const categoryButtons = document.querySelectorAll(".categoria__card__button");
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                datos.productosOption.click();
+            });
+        });
+        const readModeHome = document.querySelector(".home__about__read__more");
+        readModeHome.addEventListener("click", () => {
+            datos.aboutOption.click();
+        });
+        iniciarAsistente(datos);
     })
 
     //MENU BUTTON
@@ -34,6 +60,16 @@ export const Menu = () => {
         datos.homeOption.classList.add("navbar__menu__option__active");
         datos.searchBarContainer.classList.remove("show__search__bar");
         renderizar(contentContainer, homeComponent);
+        const categoryButtons = document.querySelectorAll(".categoria__card__button");
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                datos.productosOption.click();
+            });
+        });
+        const readModeHome = document.querySelector(".home__about__read__more");
+        readModeHome.addEventListener("click", () => {
+            datos.aboutOption.click();
+        });
     })
 
     //SOBRE NOSOTROS BUTTON
@@ -59,7 +95,8 @@ export const Menu = () => {
 
     //CONTACTENOS BUTTON
 
-    //CONFIGURACION BUTTON
+    //THEME BUTTON
+    startTheme();
 
     //CARRITO BUTTON
 
@@ -75,7 +112,6 @@ export const Menu = () => {
             login("login");
         }
     })
-
 
     //loginButton
 }
