@@ -13,20 +13,24 @@ export function iniciarAsistente(datos) {
         } else {
             //instancia de speechRecognition
             rec = new webkitSpeechRecognition();
-            rec.lang = "es-AR";
+            rec.lang = "es";
             //detenerse al oir una vez, no escucha constantemente
             rec.continuous = false;
             //lanza un evento result cuando obtiene resultados de la escucha
-            rec.interim = true;
+            rec.interimResults = true;
             //manejar los resutlados que se escuchan
             rec.addEventListener("result", iniciar);
             //iniciar reconocimiento de voz
+            rec.addEventListener("end", () => {
+                rec.start();
+            });
             rec.start();
         }
     });
 
     function iniciar(event) {
         const texto = event.results[0][0].transcript.toLowerCase();
+        console.log(texto)
         charla(texto);
     }
 
@@ -34,24 +38,36 @@ export function iniciarAsistente(datos) {
         console.log(texto);
 
         switch (texto) {
-            case "instructions":
+            case "instructiones":
                 instrucciones();
                 break;
             case "abrir youtube":
-                decir("Abriendo YouTube");
+                decir("Opening YouTube");
                 window.open("https://www.youtube.com/?gl=AR&hl=es-419");
                 break;
             case "ir a productos":
-                decir("Abriendo productos");
+                decir("Opening products");
                 datos.productosOption.click();
                 break;
+            case "ir a sobre nosotros":
+                decir("Opening about");
+                datos.aboutOption.click();
+                break;
+            case "ir a home":
+                decir("Opening home");
+                datos.homeOption.click();
+                break;
+            case "ir a login":
+                decir("Opening login form");
+                datos.loginButton.click();
+                break;
             case "finalizar ayuda":
-                decir("Entendido. Cerrando el reconocimiento de voz");
+                decir("Got it, ending the voice recognition");
                 voice = false;
                 rec.stop();
                 break;
             default:
-                decir("No te escuché");
+                decir("I didnt heard you");
         }
     }
 
@@ -64,7 +80,6 @@ export function iniciarAsistente(datos) {
             });
 
             const voces = speechSynthesis.getVoices();
-            console.log("Voces disponibles:", voces);
 
             const vozFemenina = voces.find(voice => voice.name === "Microsoft Zira - English (United States)");
 

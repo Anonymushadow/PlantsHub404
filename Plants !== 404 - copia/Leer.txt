@@ -10,8 +10,17 @@ Login:
 
 Registro: esta inhabilitado por el momento
 
-Asistente de voz: se activa al presionar el logo de la pagina, actualmente esta en proceso de adaptarlo
-debido a que realmente no le vemos uso, solo fue añadido por hacer pruebas de como quedaba en este proyecto
+Asistente de voz: se activa al presionar el logo de la pagina
+    Comandos:
+        "abrir youtube": te abre youtube en una pestaña nueva (lo habia hecho de prueba y me parecio que podria ser util dejarlo ahi)
+        "ir a home": te renderiza home
+        "ir a sobre nosotros": te renderiza sobre nosotros
+        "ir a productos": te renderiza productos
+        "ir a login": te renderiza el formulario de login
+    Como activo los comandos?: una vez que acaba de hablar el asistente solo decir el comando especifico 
+    Advertencia: en brave no te escucha, en chrome va perfecto y falta revisar otros navegadores 
+    Extra: para saber si no te escucha o si esta escuchando mal abrir la consola donde se mostrara lo que escucha cada vez que hablas
+
 
 Productos: 
     .para realizar una compra debera logearse previamente
