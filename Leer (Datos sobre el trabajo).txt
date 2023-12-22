@@ -10,6 +10,7 @@ Login:
 
 Registro: esta inhabilitado por el momento
 
+-------------------------------------------------------------------------------------------------------------------------------------------
 Asistente de voz: se activa al presionar el logo de la pagina
     Comandos:
         "abrir youtube": te abre youtube en una pestaña nueva (lo habia hecho de prueba y me parecio que podria ser util dejarlo ahi)
@@ -18,9 +19,10 @@ Asistente de voz: se activa al presionar el logo de la pagina
         "ir a productos": te renderiza productos
         "ir a login": te renderiza el formulario de login
     Como activo los comandos?: una vez que acaba de hablar el asistente solo decir el comando especifico 
-    Advertencia: en brave no te escucha, en chrome va perfecto y falta revisar otros navegadores 
+    ADVERTENCIA: en brave no te escucha, en chrome va perfecto y falta revisar otros navegadores 
     Extra: para saber si no te escucha o si esta escuchando mal abrir la consola donde se mostrara lo que escucha cada vez que hablas
 
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 Productos: 
     .para realizar una compra debera logearse previamente
@@ -41,3 +43,6 @@ Contactenos: no lo pudimos hacer por el tiempo
 Futuras mejoras: actualmente lo hicimos apurados x entregarlo pero la idea seria mas adelante arreglarlo y hacerlo
 mas funcional, atractivo y con codigo mas limpio
 
+
+Carpetas: hay 2 carpetas debido a que trabajamos con cosa x separado y al final lo unificamos, Plants !== 404  es la carpeta con el proyecto 
+final, TPecomPlantas404 fue trabajo de olga realizado por searado pero util para el trabajo
