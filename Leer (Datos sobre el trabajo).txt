@@ -1,0 +1,43 @@
+Login: 
+    User 1: claudelnahuel22@gmail.com
+    Clave: aabcy2
+    
+    User 2; tomas@gmail.com
+    Clave: 0093
+
+    .tiene verificacion de datos para evitar que se introduzcan datos erroneos incluse si
+    acceden a la consola cambiandole el tipo al input y eliminando el required
+
+Registro: esta inhabilitado por el momento
+
+Asistente de voz: se activa al presionar el logo de la pagina
+    Comandos:
+        "abrir youtube": te abre youtube en una pestaña nueva (lo habia hecho de prueba y me parecio que podria ser util dejarlo ahi)
+        "ir a home": te renderiza home
+        "ir a sobre nosotros": te renderiza sobre nosotros
+        "ir a productos": te renderiza productos
+        "ir a login": te renderiza el formulario de login
+    Como activo los comandos?: una vez que acaba de hablar el asistente solo decir el comando especifico 
+    Advertencia: en brave no te escucha, en chrome va perfecto y falta revisar otros navegadores 
+    Extra: para saber si no te escucha o si esta escuchando mal abrir la consola donde se mostrara lo que escucha cada vez que hablas
+
+
+Productos: 
+    .para realizar una compra debera logearse previamente
+    .cada producto tiene un stock el cual no puede superarse al momento de añadir al carrito, este sera 
+    verificado, tanto al añadir desde la info del producto como cuando se añade mediante la tarjeta de producto
+
+Carrito: 
+    no adaptado a mobiles por el tiempo
+    no tiene un bloqueo para no acceder si no tenes productos cargados
+    al reiniciar la pagina sigue estando los productos seleccionados
+    al realizar el pedido se te enviara al whatsapp con los datos del pedido (puse mi whatsapp porque si jaja)
+
+Adaptacion: adaptado a dispositivos mobiles y de escritorio en su mayoria
+
+Contactenos: no lo pudimos hacer por el tiempo
+
+
+Futuras mejoras: actualmente lo hicimos apurados x entregarlo pero la idea seria mas adelante arreglarlo y hacerlo
+mas funcional, atractivo y con codigo mas limpio
+
