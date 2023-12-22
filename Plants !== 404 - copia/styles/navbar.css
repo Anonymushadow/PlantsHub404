@@ -218,6 +218,8 @@
         bottom: 10px;
         left: 0;
         color: var(--color__principal);
+        text-shadow: -1px 1px 10px var(--color__neutro__claro);
+        font-size: 2em;
     }
 }
 
