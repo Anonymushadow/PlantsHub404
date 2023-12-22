@@ -45,7 +45,7 @@ const loginVerification = async(datos) => {
         if (usuario && usuario.clave == `${password}`) {
             userAllowed = usuario.usuario;
             alert(`Bienvendio ${userAllowed}`);
-            renderizar(contentContainer, "<h2>Productos</h2>");
+            document.querySelector(".navbar__menu__option").click();
         } else {
             let errMessage = usuario ? "Contraseña incorrecta" : "Usuario no encontrado";
             alert(errMessage);

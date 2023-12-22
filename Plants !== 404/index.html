@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="stylesheet" href="./styles/productos.css">
+    <link rel="stylesheet" href="./styles/cart.css">
     <link rel="stylesheet" href="./styles/footer.css">
 </head>
 
@@ -44,7 +45,12 @@
                 </ul>
             </div>
             <div class="navbar__extra__buttons__container">
-                <i class="fas fa-solid fa-cart-shopping navbar__cart__button"></i>
+                <div class="fas fa-solid fa-cart-shopping navbar__cart__button__container">
+                    <i class="fas fa-solid fa-cart-shopping navbar__cart__button">
+                        <p class="stoke__text"></p>
+                        <div class="cantidad__productos"></div>
+                    </i>
+                </div>
                 <i class="fas fa-solid fa-user navbar__login__button"></i>
                 <i class="fas fa-solid fa-bars navbar__menu__button"></i>
             </div>

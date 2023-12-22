@@ -4,6 +4,7 @@ import { crearModalProductoComponent } from "../componentes/modalProductoInfoCom
 import { productosComponent } from "../componentes/productosComponent.mjs";
 import { renderizar } from "./renderizar.mjs";
 import { crearVariablesIniciales, contentContainer, obtenerDatosProductsDOM, obtenerDatosProductoModal, carrito } from "./config.mjs";
+import { añadirAlCarritoVisual } from "./carrito.mjs";
 
 await crearVariablesIniciales();
 let productContainer;
@@ -105,12 +106,17 @@ const abrirModalInfoProducto = (id, clickCart) => {
                 if (nuevaCantidad <= producto[0].stock) {
                     const indiceProductoEnCarrito = carrito.findIndex(elemento => elemento.producto === producto[0].nombreVulgar);
                     carrito[indiceProductoEnCarrito].cantidad = nuevaCantidad;
+                    carrito[indiceProductoEnCarrito].precioTotal = parseInt(carrito[indiceProductoEnCarrito].cantidad) * parseInt(carrito[indiceProductoEnCarrito].precioUnitario);
+                    console.log(carrito[indiceProductoEnCarrito].precioTotal)
                     alert(`${producto[0].nombreVulgar} x${carrito[indiceProductoEnCarrito].cantidad} añadido al carrito`);
+                    añadirAlCarritoVisual(parseInt(datosModal.cantidadSeleccionada.textContent), carrito[indiceProductoEnCarrito]);
                 } else {
                     alert("La cantidad seleccionada supera el stock disponible");
                 }
             } else {
                 let datosParaCarrito = {
+                    id: producto[0].id,
+                    imagen: producto[0].imagen[0],
                     producto: producto[0].nombreVulgar,
                     cantidad: datosModal.cantidadSeleccionada.textContent,
                     precioUnitario: producto[0].precio,
@@ -119,10 +125,12 @@ const abrirModalInfoProducto = (id, clickCart) => {
 
                 carrito.push(datosParaCarrito);
                 alert(`${datosParaCarrito.producto} x${datosParaCarrito.cantidad} añadido al carrito`);
+                añadirAlCarritoVisual(datosModal.cantidadSeleccionada.textContent, carrito[carrito.length - 1]);
             }
         }
     });
 
+    //si se le envia un producto a la funcion entonces hace click en añadir al carrito y click en cerrar modal
     if (clickCart) {
         datosModal.addToCart.click();
         datosModal.cerrarModalButton.click();

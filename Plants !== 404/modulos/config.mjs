@@ -1,6 +1,11 @@
 //Aca tendremos todo lo que son datos, nada de logica (de ser posible)
 
-export let carrito = [];
+export let carrito = localStorage.getItem("productsInCart") || [];
+try {
+    carrito = JSON.parse(carrito);
+} catch (e) {
+    carrito = [];
+}
 export let productos = [];
 export let contentContainer;
 
@@ -21,6 +26,7 @@ export const obtenerDatosNavbarDOM = () => {
     const themeOption = document.querySelector(".switch");
     const contactOption = document.querySelector(".navbar__menu__option__contacto");
     const carritoButton = document.querySelector(".navbar__cart__button");
+    const carritoButtonCantidad = document.querySelector(".cantidad__productos");
     const loginButton = document.querySelector(".navbar__login__button");
     const navImage = document.querySelector(".navbar__logo");
     const color = document.querySelector(":root");
@@ -39,7 +45,8 @@ export const obtenerDatosNavbarDOM = () => {
         loginButton,
         navImage,
         homeOption,
-        color
+        color,
+        carritoButtonCantidad
     }
 };
 

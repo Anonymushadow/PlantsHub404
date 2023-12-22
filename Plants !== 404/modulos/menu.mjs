@@ -1,4 +1,4 @@
-import { obtenerDatosNavbarDOM, contentContainer } from "./config.mjs";
+import { obtenerDatosNavbarDOM, contentContainer, carrito } from "./config.mjs";
 import { renderizar } from "./renderizar.mjs";
 import { loginComponent } from "../componentes/ingreso.mjs";
 import { login, userAllowed, cerrarSesion } from "./login.mjs";
@@ -9,14 +9,16 @@ import { arrayPlantas } from "./crearPlanta.mjs";
 import { Buscar } from "./search.mjs";
 import { startTheme } from "./theme.mjs";
 import { iniciarAsistente } from "./asistente.mjs";
+import { añadirAlCarritoVisual, startCartButtonCounter, mostrarCarrito } from "./carrito.mjs";
 
 const eliminarSeleccion = (links) => {
     links.forEach(link => link.classList.remove("navbar__menu__option__active"));
 }
 
+
+
 export const Menu = () => {
     const datos = obtenerDatosNavbarDOM();
-
 
     const categoryButtons = document.querySelectorAll(".categoria__card__button");
     categoryButtons.forEach(button => {
@@ -99,6 +101,10 @@ export const Menu = () => {
     startTheme();
 
     //CARRITO BUTTON
+    startCartButtonCounter();
+    datos.carritoButton.addEventListener("click", () => {
+        mostrarCarrito();
+    })
 
     //LOGIN BUTTON
     datos.loginButton.addEventListener("click", () => {
@@ -113,5 +119,6 @@ export const Menu = () => {
         }
     })
 
-    //loginButton
 }
+
+console.log(carrito);

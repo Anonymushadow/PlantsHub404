@@ -391,5 +391,7 @@
 
 .show__modal {
     width: 100%;
+    display: flex;
+    z-index: 30;
     height: 100vh;
 }

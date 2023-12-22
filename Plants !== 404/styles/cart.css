@@ -1,0 +1,110 @@
+    /* ------------CART PAGE--------------------------- */
+    
+    .products__container {
+        max-width: 800px;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding-top: 50px;
+        background-color: var(----color__terciario__transparente);
+        min-height: calc(100dvh - 80px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+    
+    .product__header {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: 4px solid var(--color__neutro__claro);
+        color: var(--color__neutro__oscuro);
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    
+    .plantas {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .planta {
+        width: 88%;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--color__neutro__claro);
+        /* padding: 10px 0 10px 56px; */
+        align-items: center;
+        border-radius: 10px;
+        padding: 7px;
+        padding-left: 15px;
+    }
+    
+    .plantas img {
+        max-width: 75px;
+        margin-right: 5px;
+    }
+    
+    .plantas img,
+    .button__close {
+        flex: 1;
+    }
+    
+    .button__close {
+        color: var(--color__cuarto);
+        cursor: pointer;
+    }
+    
+    .planta span,
+    .quantity,
+    .total,
+    .price {
+        flex: 3;
+    }
+    
+    .basketTotalContainer {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .basketTotalTitle {
+        width: 10%;
+    }
+    
+    .basketTotal {
+        width: 20%;
+    }
+    
+    .boton__comprar {
+        font: bold;
+        font-size: 1em;
+        color: var(--color__principal);
+        background-color: var(--color__cuarto);
+        /* margin-left: 550px; */
+        margin-top: 20px;
+        margin-right: 6%;
+        padding: 10px;
+        border: 3px solid var(--color__principal);
+        border-radius: 20px;
+    }
+    
+    .boton__comprar:hover {
+        background-color: var(--color__secundario);
+        cursor: pointer;
+        color: var(--color__cuarto);
+    }
+    
+    @media screen and (max-width: 680px) {
+        .planta {
+            flex-direction: column;
+            width: auto;
+            gap: 10px;
+        }
+    }
